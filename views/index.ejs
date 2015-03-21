@@ -78,7 +78,7 @@
 	</div>
   
 	<div class="table-responsive-vertical shadow-z-1">
-	<table class="table table-striped table-hover1 table-bordered">
+	<table class="table table-striped table-hover1 table-bordered1">
 	<thead>
 		<tr>
 		  <th>Name</th>
@@ -111,7 +111,7 @@
 			<label>New space: </label>
 			<input type="text" ng-model="newSpace.name">
 		</md-input-container>
-		<md-button class="md-fab md-primary" aria-label="Create">
+		<md-button class="md-fab md-primary" aria-label="Create" ng-click="save()">
 			<md-icon md-svg-src="img/icons/android.svg"></md-icon>
 		</md-button>
 	</div>
