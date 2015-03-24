@@ -1,19 +1,41 @@
-﻿<h1>{{ space.name }}</h1>
+﻿<h1>{{ space.name || "New space" }}</h1>
 	
 <form name="spaceForm">
-	<md-input-container>
-		<label>Name</label>
-		<input md-maxlength="30" required name="name" ng-model="space.name">
-		<div ng-messages="spaceForm.description.$error">
-			<div ng-message="required">This is required.</div>
-			<div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
-		</div>
-	</md-input-container>
+	<div layout layout="column">
+		<md-input-container flex="75">
+			<label>Name</label>
+			<input md-maxlength="30" required name="name" ng-model="space.name">
+			<div ng-messages="spaceForm.description.$error">
+				<div ng-message="required">This is required.</div>
+				<div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+			</div>
+		</md-input-container>
+		<md-input-container flex>
+			<md-select placeholder="Type" ng-model="space.type">
+				<md-option value="dev">Development</md-option>
+				<md-option value="prod">Production</md-option>
+			</md-select>
+		</md-input-container>
+	</div>
 	<md-input-container>
 		<label>Description</label>
 		<input ng-model="space.description">
 	</md-input-container>
+	<md-input-container>
+		<label>Base service URI</label>
+		<input ng-model="space.baseUri">
+	</md-input-container>
+	<h3>Services</h3>
+	<md-input-container>
+		<label>org</label>
+		<input ng-model="space.services.org">
+	</md-input-container>
+	<md-input-container>
+		<label>cmis</label>
+		<input ng-model="space.services.cmis">
+	</md-input-container>
+	<div layout="columnn" layout-align="center center" layout-margin layout-padding>
+		<md-button flex="25" class="md-raised md-primary" ng-click="update()">Update</md-button>
+		<md-button flex="25" class="md-raised" ng-href="#/spaces">Cancel</md-button>
+	</div>
 </form>
-
-<button ng-click="update()">Update</button>
-<a href="#/spaces">Cancel</a>

@@ -43,6 +43,19 @@
 		<md-content class="md-padding">
 			<div ui-view></div>
 		</md-content>
+		
+		<md-bottom-sheet class="md-grid">
+			<md-list>
+				<md-item>
+					<md-button class="md-grid-item-content" aria-label="Home" ng-href="#/">
+						<div class="md-icon-container">
+							<md-inline-grid-icon icon="{{item.icon}}"></md-inline-grid-icon>
+						</div>
+						<p class="md-grid-text">Home</p>
+					</md-button>
+				</md-item>
+			</md-list>
+		</md-bottom-sheet>
 	</div>
 
 
@@ -57,7 +70,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
 
 <script src="app.module.js"></script>
-<script src="app.routes.js"></script>
 <script src="components/spaces/spaces.component.js"></script>
 
 
