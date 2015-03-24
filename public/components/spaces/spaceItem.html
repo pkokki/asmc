@@ -1,0 +1,19 @@
+﻿<h1>{{ space.name }}</h1>
+	
+<form name="spaceForm">
+	<md-input-container>
+		<label>Name</label>
+		<input md-maxlength="30" required name="name" ng-model="space.name">
+		<div ng-messages="spaceForm.description.$error">
+			<div ng-message="required">This is required.</div>
+			<div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+		</div>
+	</md-input-container>
+	<md-input-container>
+		<label>Description</label>
+		<input ng-model="space.description">
+	</md-input-container>
+</form>
+
+<button ng-click="update()">Update</button>
+<a href="#/spaces">Cancel</a>
